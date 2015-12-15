@@ -74,7 +74,7 @@ $ nano ACT-blink.c
     	while(1)
     	{
             		digitalWrite(ledPin, HIGH); 
-            		delay(1000);
+            		delay(1000);			//delay time ~ millisecond
             		digitalWrite(ledPin, LOW);
             		delay(1000);
     	}
