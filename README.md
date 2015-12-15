@@ -6,7 +6,6 @@
 $ cd ~
 $ git clone https://github.com/raspberrypi/tools.git
 $ cp -r tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/ ~/
-$ cd ~
 $ mv gcc-linaro-arm-linux-gnueabihf-raspbian/ arm-linux-gnueabihf
 ```
 
