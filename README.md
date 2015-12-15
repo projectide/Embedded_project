@@ -64,7 +64,7 @@ $ nano ACT-blink.c
 	#include <stdio.h>
 	#include <wiringPi.h> 
 	
-	const int ledPin = 47; #pin ACT LED
+	const int ledPin = 47;   //pin ACT LED
 	
 	int main(void){
 	
