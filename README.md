@@ -67,7 +67,6 @@ $ nano ACT-blink.c
 	const int ledPin = 47;   //pin ACT LED
 	
 	int main(void){
-	
 	wiringPiSetupGpio(); 
         pinMode(ledPin, OUTPUT);
         
