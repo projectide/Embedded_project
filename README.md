@@ -175,7 +175,7 @@ $ sudo cp  ~/project/ACT-blink ~/mnt/rootfs/opt
 $ sudo umount ~/mnt/*
 ```
 
-7 boot raspberry pi แล้วทดลองรัน ACT-blink
+7 เสียบ SD Card แล้ว boot raspberry pi และทดลองรัน ACT-blink
 
 ```sh
 $ cd /opt
