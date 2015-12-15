@@ -59,7 +59,7 @@ $ cd ~/project/
 $ touch ACT-blink.c
 $ nano ACT-blink.c
 ```
-จากนั้นพิมพ์โค้ดตัวอย่างดังนี้
+จากนั้นพิมพ์โค้ดตัวอย่างดังนี้ (หรือแก้ไขโค้ดตามที่ต้องการ)
 ```C
 	#include <stdio.h>
 	#include <wiringPi.h> 
@@ -67,8 +67,9 @@ $ nano ACT-blink.c
 	const int ledPin = 47;   //pin ACT LED
 	
 	int main(void){
+
 	wiringPiSetupGpio(); 
-        pinMode(ledPin, OUTPUT);
+	pinMode(ledPin, OUTPUT);
         
     	while(1)
     	{
