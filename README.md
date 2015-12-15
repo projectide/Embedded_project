@@ -40,7 +40,8 @@ $ git clone git://git.drogon.net/wiringPi
 ```sh
 $ cd wiringPi/wiringPi/
 $ nano Makefile
-		
+```
+```
 		แก้ไขจาก “CC      = gcc” เป็น “CC      = arm-linux-gnueabihf-gcc”
 		จากนั้น save และ exit
 ```
@@ -104,7 +105,7 @@ $ make raspberrypi2_defconfig
 $ make menuconfig
 ```
 หลังจากนั้นเลือก
-```sh
+```
 	Toolchain
 		Toolchain type (Buildroot toolchain) –-> เปลี่ยนเป็น Enternal toolchain
 		Toolchain (Linaro ARM xxxx.xx)
