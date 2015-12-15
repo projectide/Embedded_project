@@ -45,7 +45,7 @@ $ nano Makefile
 		แก้ไขจาก “CC      = gcc” เป็น “CC      = arm-linux-gnueabihf-gcc”
 		จากนั้น save และ exit
 ```
-5 ทำการmake ซึ่งจะ compile โดยใช้ cross compiler ให้โดยอัตโนมัติ
+5 ทำการ make ซึ่งจะ compile โดยใช้ cross compiler ให้โดยอัตโนมัติ
 ```sh
 $ make
 ```
