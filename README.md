@@ -1,6 +1,6 @@
 ### Embedded_project
 
-1. เตรียมเครื่องมือ สำหรับเป็น Cross Compiler
+1 เตรียมเครื่องมือ สำหรับเป็น Cross Compiler
 
 ```sh
 $ cd ~
@@ -22,19 +22,19 @@ $ echo "export "PATH=$PATH:~/arm-linux-gnueabihf/bin"" >> ~/.bashrc
 $ arm-linux-gnueabihf-gcc -v
 ```
 
-2. สร้างโฟลเดอร์สำหรับเก็บงาน
+2 สร้างโฟลเดอร์สำหรับเก็บงาน
 
 ```sh
 $ cd ~
 $ mkdir project
 ```
 
-3. จัดเตรียม wiringPi ในโฟลเดอร์ project
+3 จัดเตรียม wiringPi ในโฟลเดอร์ project
 ```sh
 $ cd project
 $ git clone git://git.drogon.net/wiringPi
 ```
-4. ทำการ config wiringPi เพื่อให้ make ด้วย cross compiler ที่ได้เตรียมไว้ก่อนหน้านี้
+4 ทำการ config wiringPi เพื่อให้ make ด้วย cross compiler ที่ได้เตรียมไว้ก่อนหน้านี้
 ```sh
 $ cd wiringPi/wiringPi/
 $ nano Makefile
@@ -42,7 +42,7 @@ $ nano Makefile
 		แก้ไขจาก “CC      = gcc” เป็น “CC      = arm-linux-gnueabihf-gcc”
 		จากนั้น save และ exit
 ```
-5. ทำการmake ซึ่งจะ compile โดยใช้ cross compiler ให้โดยอัตโนมัติ
+5 ทำการmake ซึ่งจะ compile โดยใช้ cross compiler ให้โดยอัตโนมัติ
 ```sh
 $ make
 ```
@@ -50,7 +50,7 @@ $ make
 ```sh
 $ mv libwiringPi.so.x.xx  libwiringPi.so
 ```
-6. เขียนโปรแกรมสำหรับ raspberry pi เพื่อควบควม ACT LED บนบอร์ดโดยเรียกใช้  libwiringPi
+6 เขียนโปรแกรมสำหรับ raspberry pi เพื่อควบควม ACT LED บนบอร์ดโดยเรียกใช้  libwiringPi
 ```sh
 $ cd ~/project/
 $ touch ACT-blink.c
@@ -82,18 +82,18 @@ $  arm-linux-gnueabihf-gcc -o ACT-blink ACT-blink.c -I ~/project/wiringPi/wiring
 
 ##### ต่อไปจะเป็นการสร้าง minimal Linux system สำหรับ Raspberry Pi 2 โดยใช้ Buildroot 
 
-1. จัดเตรียม buildroot โดยใช้ git
+1 จัดเตรียม buildroot โดยใช้ git
 ```sh
 $ cd ~/project/
 $ git clone git://git.buildroot.net/buildroot
 ```
 
-2. ทำการ config สำหรับ raspberry pi 2 
+2 ทำการ config สำหรับ raspberry pi 2 
 ```sh
 $ cd buildroot
 $ make raspberrypi2_defconfig
 ```
-3. ทำการ config สำหรับเลือก Toolchain เป็น Linaro ARM
+3 ทำการ config สำหรับเลือก Toolchain เป็น Linaro ARM
 ```sh
 $ make menuconfig
 ```
@@ -108,7 +108,7 @@ $ make menuconfig
 $ make
 ```
 จากนั้นรอ (ถ้า make ครั้งแรกจะนานมากๆ เพราะต้องโหลดไฟล์ขนาดใหญ่)
-4. จัดเตรียม SD Card 
+4 จัดเตรียม SD Card 
 
 ```
 $ sudo fdisk /dev/mmcblk0
@@ -148,7 +148,7 @@ $ mkdir -p ~/mnt/rootfs
 $ sudo mount /dev/mmcblk0p2 ~/mnt/rootfs
 ```
 
-5. คัดลอกไฟล์ที่ได้จากการ make ของ buildroot ไปยัง SD Card ที่เตรียมไว้
+5 คัดลอกไฟล์ที่ได้จากการ make ของ buildroot ไปยัง SD Card ที่เตรียมไว้
 
 ```sh
 $ cd ~/project/buildroot
@@ -158,7 +158,7 @@ $ sudo ./output/host/usr/bin/mkknlimg output/images/zImage ~/mnt/boot/zImage
 $ sudo tar xf ./output/images/rootfs.tar -C ~/mnt/rootfs
 ```
 
-6. คัดลอกไฟล์โปรแกรม ACT-blink และ libwiringPi.so ไปยัง  rootfs
+6 คัดลอกไฟล์โปรแกรม ACT-blink และ libwiringPi.so ไปยัง  rootfs
 
 ```sh
 $ sudo cp  ~/project/wiringPi/wiringPi/libwiringPi.so ~/mnt/rootfs/usr/lib
@@ -167,7 +167,7 @@ $ sudo cp  ~/project/ACT-blink ~/mnt/rootfs/opt
 $ sudo umount ~/mnt/*
 ```
 
-7. boot raspberry pi แล้วทดลองรัน ACT-blink
+7 boot raspberry pi แล้วทดลองรัน ACT-blink
 
 ```sh
 $ cd /opt
