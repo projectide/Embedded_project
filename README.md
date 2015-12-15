@@ -166,7 +166,7 @@ $ sudo ./output/host/usr/bin/mkknlimg output/images/zImage ~/mnt/boot/zImage
 $ sudo tar xf ./output/images/rootfs.tar -C ~/mnt/rootfs
 ```
 
-6 คัดลอกไฟล์โปรแกรม ACT-blink และ libwiringPi.so ไปยัง  rootfs
+6 คัดลอกไฟล์โปรแกรม ACT-blink และ libwiringPi.so ไปยัง rootfs
 
 ```sh
 $ sudo cp  ~/project/wiringPi/wiringPi/libwiringPi.so ~/mnt/rootfs/usr/lib
@@ -175,7 +175,7 @@ $ sudo cp  ~/project/ACT-blink ~/mnt/rootfs/opt
 $ sudo umount ~/mnt/*
 ```
 
-7 เสียบ SD Card แล้ว boot raspberry pi และทดลองรัน ACT-blink
+7 เสียบ SD Card กับ raspberry pi แล้ว boot หลังจากนั้นทดลองรัน ACT-blink
 
 ```sh
 $ cd /opt
