@@ -63,10 +63,14 @@ $ nano ACT-blink.c
 ```C
 	#include <stdio.h>
 	#include <wiringPi.h> 
-	const int ledPin = 47;
+	
+	const int ledPin = 47; #pin ACT LED
+	
 	int main(void){
-	    	wiringPiSetupGpio(); 
-    		pinMode(ledPin, OUTPUT);    
+	
+	wiringPiSetupGpio(); 
+        pinMode(ledPin, OUTPUT);
+        
     	while(1)
     	{
             		digitalWrite(ledPin, HIGH); 
