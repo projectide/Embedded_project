@@ -15,7 +15,10 @@ $ mv gcc-linaro-arm-linux-gnueabihf-raspbian/ arm-linux-gnueabihf
 ```sh
 $ echo "export "PATH=$PATH:~/arm-linux-gnueabihf/bin"" >> ~/.bashrc
 ```
-
+หรือกำหนด PATH แบบชั่วคราว
+```sh
+$ export "PATH=$PATH:~/arm-linux-gnueabihf/bin"
+```
 ทดสอบ PATH ด้วยคำสั่ง (ถ้าไม่ได้ให้ปิด Terminal แล้วเปิดขึ้นมาใหม่)
 
 ```sh
