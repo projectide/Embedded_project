@@ -10,13 +10,13 @@ $ cd ~
 $ mv gcc-linaro-arm-linux-gnueabihf-raspbian/ arm-linux-gnueabihf
 ```
 
-	จากนั้นทำการกำหนด PATH แบบถาวร ใน ~/.bashrc หรือ /etc/profile
+จากนั้นทำการกำหนด PATH แบบถาวร ใน ~/.bashrc หรือ /etc/profile
 
 ```sh
 $ echo "export "PATH=$PATH:~/arm-linux-gnueabihf/bin"" >> ~/.bashrc
 ```
 
-	ทดสอบ PATH ด้วยคำสั่ง (ถ้าไม่ได้ให้ปิด Terminal แล้วเปิดขึ้นมาใหม่)
+ทดสอบ PATH ด้วยคำสั่ง (ถ้าไม่ได้ให้ปิด Terminal แล้วเปิดขึ้นมาใหม่)
 
 ```sh
 $ arm-linux-gnueabihf-gcc -v
@@ -46,7 +46,7 @@ $ nano Makefile
 ```sh
 $ make
 ```
-	จะเห็นว่าได้ไฟล์ libwiringPi.so.x.xx ให้ทำการเปลี่ยนชื่อไฟล์  libwiringPi.so.x.xx เป็น  libwiringPi.so
+จะเห็นว่าได้ไฟล์ libwiringPi.so.x.xx ให้ทำการเปลี่ยนชื่อไฟล์  libwiringPi.so.x.xx เป็น  libwiringPi.so
 ```sh
 $ mv libwiringPi.so.x.xx  libwiringPi.so
 ```
@@ -56,7 +56,7 @@ $ cd ~/project/
 $ touch ACT-blink.c
 $ nano ACT-blink.c
 ```
-	จากนั้นพิมพ์โค้ดตัวอย่างดังนี้
+จากนั้นพิมพ์โค้ดตัวอย่างดังนี้
 ```C
 	#include <stdio.h>
 	#include <wiringPi.h> 
@@ -74,11 +74,11 @@ $ nano ACT-blink.c
     	return 0;
 	}
 ```
-	จากนั้น save แล้ว compile  โดยใช้ cross compiler 
+จากนั้น save แล้ว compile  โดยใช้ cross compiler 
 ```sh
 $  arm-linux-gnueabihf-gcc -o ACT-blink ACT-blink.c -I ~/project/wiringPi/wiringPi -L ~/project/wiringPi/wiringPi -lwiringPi
 ```
-	จะได้ไฟล์ executable ชื่อว่า ACT-blink 
+จะได้ไฟล์ executable ชื่อว่า ACT-blink 
 
 ##### ต่อไปจะเป็นการสร้าง minimal Linux system สำหรับ Raspberry Pi 2 โดยใช้ Buildroot 
 
@@ -97,17 +97,17 @@ $ make raspberrypi2_defconfig
 ```sh
 $ make menuconfig
 ```
-	หลังจากนั้นเลือก
+หลังจากนั้นเลือก
 ```sh
 	Toolchain
 		Toolchain type (Buildroot toolchain) –-> เปลี่ยนเป็น Enternal toolchain
 		Toolchain (Linaro ARM xxxx.xx)
 ```
-	เสร็จแล้ว Save และ Exit ออกมาหน้า Terminal พิมพ์คำสั่ง
+เสร็จแล้ว Save และ Exit ออกมาหน้า Terminal พิมพ์คำสั่ง
 ```sh
 $ make
 ```
-	จากนั้นรอ (ถ้า make ครั้งแรกจะนานมากๆ เพราะต้องโหลดไฟล์ขนาดใหญ่)
+จากนั้นรอ (ถ้า make ครั้งแรกจะนานมากๆ เพราะต้องโหลดไฟล์ขนาดใหญ่)
 4 จัดเตรียม SD Card 
 
 ```
@@ -137,7 +137,7 @@ $ sudo fdisk /dev/mmcblk0
 ```
 
 
-	ทำการฟอร์แมตพาร์ติชัน FAT16 และ EXT4
+ทำการฟอร์แมตพาร์ติชัน FAT16 และ EXT4
 ```sh
 $ sudo mkfs.vfat -F16 -n BOOT /dev/mmcblk0p1
 $ mkdir -p ~/mnt/boot
